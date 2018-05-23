@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col stories">
+        <div class="content">
+
+            <div class="card border-{priority} text-center story-card">
+                <div class="card-header text-primary">
+                    {title}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{description}</p>
+                    <div class="buttons">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-light btn-sm" data-toggle="modal"
+                                data-target="#taskCreatorModal" data-id="{ID}">
+                            Add Task <i class="fas fa-plus"></i>
+                        </button>
+                        <!--<button class="btn btn-sm btn-light" title="See Detail">
+                            <i class="far fa-eye"></i>
+                        </button>-->
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    {created_at} days ago
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col">
+        <div class="content">
+            <div class="row">
+                {planning_tasks}
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="content">
+            <div class="row">
+                {in_progress_tasks}
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="content">
+            <div class="row">
+                {done_tasks}
+            </div>
+        </div>
+    </div>
+</div>

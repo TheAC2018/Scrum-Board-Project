@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SCRUM BOARD</title>
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/vendors/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css"/>
+
+    <link rel="stylesheet" href="/assets/css/app.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="javascript:">SCRUM BOARD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="javascript:" onclick="router.load('boards')">Boards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Users</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Personal
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item disabled" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item disabled" href="#">Log Out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="container-fluid">
+        <div class="head" id="view-title">
+            <h1></h1>
+        </div>
+        <div class="body" id="dynamic-content-area">
+
+        </div>
+    </div>
+</main>
+
+<footer></footer>
+
+<div id="messenger">
+
+</div>
+
+<script src="/node_modules/localstoragedb/localstoragedb.js"></script>
+<script src="/node_modules/lodash/lodash.min.js"></script>
+
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/locaLStorageDB.js"></script>
+<script src="/assets/js/messenger.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/router.js"></script>
+<script src="/assets/js/view.js"></script>
+<script src="/assets/js/controller/boards_controller.js"></script>
+<script src="/assets/js/controller/board_controller.js"></script>
+<script src="/assets/js/init.js"></script>
+
+<script src="/assets/js/event-listeners.js"></script>
+</body>
+</html>
