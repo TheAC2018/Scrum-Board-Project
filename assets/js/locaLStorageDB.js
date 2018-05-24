@@ -93,7 +93,7 @@ if (DB.isNew()) {
         story_ID: 1,
         title: "But I Must Explain To",
         description: "",
-        tag: "in_progres",
+        tag: "in-progres",
         created_by: 2,
         created_at: 1526979850847
     });

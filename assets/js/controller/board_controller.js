@@ -45,12 +45,13 @@ class board_controller {
                 tasks.forEach(function (task) {
                     let template = task_template;
 
+                    template = template.replace("{ID}", task.ID);
                     template = template.replace("{title}", task.title);
                     template = template.replace("{description}", task.description);
 
                     if (task.tag === "planning")
                         planning.push(template);
-                    else if (task.tag === "in_progress")
+                    else if (task.tag === "in-progress")
                         in_progress.push(template);
                     else
                         done.push(template);
@@ -118,20 +119,38 @@ class board_controller {
     }
 
     static create_task(data) {
-        console.log(data);
+        let task_id = parseInt(data.task_id) ? parseInt(data.task_id) : undefined;
+        let create_task;
 
-        let create_task = DB.insert("tasks", {
-            story_ID: data.story_id,
-            title: data.title,
-            description: data.description,
-            tag: 'planning',
-            created_by: 1,
-            created_at: Date.now()
-        });
+        if (task_id === undefined) {
+            create_task = DB.insert("tasks", {
+                story_ID: data.story_id,
+                title: data.title,
+                description: data.description,
+                tag: data.tag,
+                created_by: 1,
+                created_at: Date.now()
+            });
+        } else {
+            create_task =DB.update("tasks", {ID: task_id}, function (row) {
+                row.title = data.title;
+                row.description = data.description;
+                row.tag = data.tag;
+
+                // the update callback function returns to the modified record
+                return row;
+            });
+        }
 
         DB.commit();
 
         return create_task;
+
+    }
+
+    static get_task(task_ID) {
+
+        return DB.queryAll("tasks", {query: {ID: task_ID}, limit: 1});
 
     }
 

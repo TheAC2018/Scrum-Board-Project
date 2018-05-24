@@ -47,10 +47,12 @@ $(function () {
     });
 
     // Preparing to Creat New Task
-    $(document).on("click", "button[data-target='#taskCreatorModal']", function () {
+    $(document).on("click", "button:not(.edit-task)[data-target='#taskCreatorModal']", function () {
         let story_id = parseInt($(this).attr("data-id"));
 
+        $("form#create-new-task")[0].reset();
         $("#taskCreatorModal input[name='story_id']").val(story_id);
+        $("#taskCreatorModal input[name='task_id']").val(null);
     });
 
     // Creating New Task
@@ -60,8 +62,10 @@ $(function () {
         let data = {};
 
         data['story_id'] = $("form#create-new-task input[name='story_id']").val();
+        data['task_id'] = $("form#create-new-task input[name='task_id']").val();
         data['title'] = $("form#create-new-task input[name='title']").val();
         data['description'] = $("form#create-new-task textarea[name='description']").val();
+        data['tag'] = $("form#create-new-task select[name='tag'] option:selected").val();
 
         if (board_controller.create_task(data)) {
             $("#taskCreatorModal").modal('hide');
@@ -76,11 +80,17 @@ $(function () {
 
     });
 
-    // Showing Detail
-    $(document).on("click", "button[data-target='#detailModal']", function () {
-        let description = $(this).attr("data-description");
+    // Edit Detail
+    $(document).on("click", "button.edit-task[data-target='#taskCreatorModal']", function () {
+        let task_ID = $(this).attr("data-id");
 
-        $("#detailModal .modal-body p.lead").text(description);
+        let task = board_controller.get_task(task_ID)[0];
+
+        $("form#create-new-task input[name='story_id']").val(task.story_ID);
+        $("form#create-new-task input[name='task_id']").val(task.ID);
+        $("form#create-new-task input[name='title']").val(task.title);
+        $("form#create-new-task textarea[name='description']").val(task.description);
+        $("form#create-new-task select[name='tag'] option[value='" + task.tag + "']").attr('selected', 'selected');
     });
 
 });
