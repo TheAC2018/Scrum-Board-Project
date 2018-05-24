@@ -6,11 +6,11 @@ This app, prepared for Software Construction lecture and developed by Aydın BUL
 This app will helps you to remind and organize your works with a to-do list for your Scrum Team in sprints. 
 It is easy to use just clone it and use these two initializer code parts on your CLI Terminal.
 
-# First
+#First
 
 npm install
 
-# Second
+#Second
 
 ./node_modules/.bin/http-server
 
@@ -19,10 +19,10 @@ npm install
 Bu uygulama Scrum Takımınızın sprintleri süresinde yapılması gereken işlerinizi hatırlatmak ve organize etmek için geliştirildi.
 Kullanması çokta kolaydır ayrıca bu projeyi klonelamanız ve CLI terminalinizde aşağıdaki kodları çalıştırmanız yeterli olacaktır. 
 
-# Birinci Olarak
+#Birinci Olarak
 
 npm install
 
-# İkinci Olarak
+#İkinci Olarak
 
 ./node_modules/.bin/http-server
