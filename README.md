@@ -15,7 +15,7 @@ npm install
 ./node_modules/.bin/http-server
 
 # Özet
-Şuan kullanmakta olduğunuz bu uygulama, Yazılım Yapımı dersi için Aydın BULUT, Rama ALSHABAN ve Cengiz CEBECİ tarafından geliştirilmiştir. 
+Şuan kullanmakta olduğunuz bu uygulama, Yazılım Yapımı dersi için Aydın BULUT ve Cengiz CEBECİ tarafından geliştirilmiştir. 
 Bu uygulama Scrum Takımınızın sprintleri süresinde yapılması gereken işlerinizi hatırlatmak ve organize etmek için geliştirildi.
 Kullanması çokta kolaydır ayrıca bu projeyi klonelamanız ve CLI terminalinizde aşağıdaki kodları çalıştırmanız yeterli olacaktır. 
 
